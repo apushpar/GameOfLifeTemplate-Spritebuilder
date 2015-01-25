@@ -16,4 +16,6 @@
 
 -(void)evolveStep;
 
+//-(BOOL)isIndexValidForX:(int)x andY:(int)y;
+
 @end
