@@ -52,7 +52,7 @@ static const int GRID_COLUMNS = 10;
             
             _gridArray[i][j] = creature;
             
-            creature.isAlive = YES;
+            //creature.isAlive = YES;
             
             x += _cellWidth;
             
@@ -60,6 +60,25 @@ static const int GRID_COLUMNS = 10;
         
         y += _cellHeight;
     }
+}
+
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
+{
+    
+    CGPoint touchLocation = [touch locationInNode:self];
+    
+    Creature *creature = [self creatureForTouchPosition:touchLocation];
+    
+    creature.isAlive = !creature.isAlive;
+    
+}
+
+-(Creature *)creatureForTouchPosition:(CGPoint)touchPosition
+{
+    int row = touchPosition.y / _cellHeight;
+    int column  = touchPosition.x/ _cellWidth;
+    
+    return _gridArray[row][column];
 }
 
 @end
