@@ -15,7 +15,7 @@
 
 
 //stores the amount of living neighbours
-@property (nonatomic, assign) NSInteger LivingNeighbors;
+@property (nonatomic, assign) NSInteger livingNeighbors;
 
 - (id)initCreature;
 
